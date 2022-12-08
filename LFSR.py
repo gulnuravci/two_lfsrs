@@ -20,6 +20,7 @@ class LFSR:
         self.period = 2 ** num_of_registers - 1 
         # Store step outputs
         self.output = 0
+        self.outputs = []
 
     def step(self):
         """ Returns: output of step"""
@@ -40,9 +41,7 @@ class LFSR:
 
         # "Shift" right by popping LSB
         self.registers.pop()
-
-        print("registers: " + bin(extensions.list_to_bin(self.registers)))
-
+        
         return self.output
 
 
