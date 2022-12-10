@@ -2,6 +2,10 @@ from LFSR import LFSR
 from G import G
 import extensions
 
+"""
+    QUESTION: What is the period of G?
+        -> I couldn't really find the period for G which is why I am making an assumption that it is very large, since a combination of LFSRs used to make the sequence more secure.
+"""
 def test_LFSR1():
     generator = G()
     LFSR_1 = generator.LFSR1
@@ -33,12 +37,14 @@ def test_LFSR2():
 
 def test_G():
     generator = G()
-    outputs = []
+    expected_outputs_generator = [0, 0, 1, 1, 0, 1, 1, 1, 1, 0]
 
-    for i in range(10000):
-        outputs.append(generator.step())
+    for i in range(10):
+        if generator.step() != expected_outputs_generator[i]:
+            print("test_G failed :(")
+            return
+    print("test_G passed!!! :D")
 
-    print(''.join(str(e) for e in outputs))
 if __name__ == '__main__':
     test_LFSR1()
     test_LFSR2()

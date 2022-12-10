@@ -1,5 +1,5 @@
 """ 
-    (MOSTLY) GENERAL CLASS FOR Linear Feedback Shift Registers (LFSRs
+    GENERAL CLASS FOR Linear Feedback Shift Registers (LFSRs)
 """
 class LFSR:
     def __init__(self, num_of_registers, active_registers, init_seq):
