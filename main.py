@@ -1,6 +1,5 @@
 from LFSR import LFSR
 from G import G
-import extensions
 
 """
     QUESTION: What is the period of G?
